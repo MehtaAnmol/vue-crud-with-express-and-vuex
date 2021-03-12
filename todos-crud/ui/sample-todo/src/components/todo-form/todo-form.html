@@ -1,0 +1,19 @@
+<div>
+  <v-row justify="center">
+    <v-col cols="12" sm="10" md="8" lg="3">
+      <v-card>
+        <v-card-text>
+          <v-text-field label="Todo" placeholder="Enter todo item name" v-model="todo.todo"></v-text-field>
+        </v-card-text>
+        <v-card-actions class="d-flex justify-end">
+          <v-btn text @click="$router.go(-1)">
+            Cancel
+          </v-btn>
+          <v-btn color="primary" text @click="saveTodo">
+            Submit
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+  </v-row>
+</div>
