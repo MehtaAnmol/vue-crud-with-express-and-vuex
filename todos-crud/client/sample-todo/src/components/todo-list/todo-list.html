@@ -1,0 +1,26 @@
+<div>
+  <v-row>
+    <v-col cols="5" class="mx-auto">
+      <div class="d-flex justify-end">
+        <v-btn color="secondary" text @click="addTodo()" icon>
+          <v-icon>fa fa-plus</v-icon>
+        </v-btn>
+      </div>
+      <v-data-table :headers="headers" :items="todos" item-key="id" class="elevation-2">
+        <template v-slot:item.todo="{ item }">
+          <v-chip class="ma-2">
+            {{ item.todo }}
+          </v-chip>
+        </template>
+        <template v-slot:item.actions="{ item }">
+          <v-icon small class="mr-4" @click="gotoTodoDetails(item.id)">
+            fa fa-pen
+          </v-icon>
+          <v-icon small @click="deleteTodo(item.id)">
+            fa fa-trash
+          </v-icon>
+        </template>
+      </v-data-table>
+    </v-col>
+  </v-row>
+</div>
